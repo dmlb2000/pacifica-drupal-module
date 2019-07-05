@@ -1,0 +1,15 @@
+name: Pacifica Data Cart
+description: 'Pacifica Data Cart module.'
+type: module
+package: Pacifica
+version: VERSION
+core: 8.x
+dependencies:
+- drupal:system (>=8.5)
+- uc_cart
+- uc_cart_links
+- uc_file
+- uc_role
+- uc_attributes
+- uc_fulfillment
+- uc_catalog

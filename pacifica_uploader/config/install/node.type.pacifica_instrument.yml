@@ -1,0 +1,13 @@
+langcode: en
+status: true
+name: 'Pacifica Instrument'
+type: 'pacifica_instrument'
+description: '<em>Pacifica Instrument</em> node type is needed and created by Pacifica module.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
+dependencies:
+  enforced:
+    module:
+      - pacifica_uploader

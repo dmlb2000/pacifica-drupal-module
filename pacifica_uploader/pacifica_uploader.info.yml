@@ -1,0 +1,9 @@
+name: Pacifica Uploader
+description: 'Pacifica module for Uploading data.'
+type: module
+package: Pacifica
+version: VERSION
+core: 8.x
+dependencies:
+- drupal:system (>=8.5)
+- filebrowser

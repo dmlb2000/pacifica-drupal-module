@@ -1,0 +1,29 @@
+---
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.instrument
+    - node.type.pacifica_instrument
+    - node.type.pacifica_upload
+id: node.pacifica_upload.instrument
+field_name: instrument
+entity_type: node
+bundle: pacifica_upload
+label: Instrument
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pacifica_instrument: pacifica_instrument
+    sort:
+      field: nid
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

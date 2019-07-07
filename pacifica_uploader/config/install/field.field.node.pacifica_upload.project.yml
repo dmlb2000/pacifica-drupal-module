@@ -1,0 +1,29 @@
+---
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.project
+    - node.type.pacifica_project
+    - node.type.pacifica_upload
+id: node.pacifica_upload.project
+field_name: project
+entity_type: node
+bundle: pacifica_upload
+label: Project
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pacifica_project: pacifica_project
+    sort:
+      field: nid
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

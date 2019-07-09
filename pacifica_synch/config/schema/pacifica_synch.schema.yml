@@ -6,6 +6,9 @@ pacifica_synch.settings:
       type: mapping
       label: 'Pacifica Synchronization Settings Again'
       mapping:
+        enabled:
+          type: boolean
+          label: 'Enable or Disable Synchronization of Data'
         metadata:
           type: mapping
           label: 'Pacifica Metadata Endpoint Settings'

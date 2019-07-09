@@ -1,0 +1,7 @@
+pacifica.admin_config_pacifica:
+  path: '/admin/config/pacifica'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Pacifica Settings'
+  requirements:
+    _permission: 'access administration pages'

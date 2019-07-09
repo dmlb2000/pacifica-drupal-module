@@ -1,0 +1,5 @@
+pacifica.admin_settings:
+  title: 'Pacifica Administration'
+  description: 'Pacifica Administration'
+  parent: system.admin_config
+  route_name: pacifica.admin_config_pacifica

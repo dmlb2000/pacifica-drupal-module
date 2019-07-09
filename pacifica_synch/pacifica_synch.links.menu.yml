@@ -1,0 +1,5 @@
+pacifica_synch.admin_settings_urls:
+  title: 'Synchronization Settings URLs'
+  description: 'Settings for AMQP and Metadata URLs'
+  parent: pacifica.admin_settings
+  route_name: pacifica_synch.settings

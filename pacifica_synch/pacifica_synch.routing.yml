@@ -1,0 +1,6 @@
+pacifica_synch.settings:
+  path: '/admin/config/system/pacifica_synch'
+  defaults:
+    _form: '\Drupal\pacifica_synch\Form\PacificaSynchConfigForm'
+  requirements:
+    _permission: 'administer site configuration'

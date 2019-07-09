@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements the pacifica synchronization extra schema.
+ */
+function pacifica_synch_schema() {
+  $schema['pacifica_synch_events'] = [
+    'description' => 'Stores events in the system already processed.',
+    'fields' => [
+      'eventid' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+        'description' => 'Event seen and processed by the synch module.',
+      ],
+    ],
+    'primary key' => ['eventid']
+  ];
+  return $schema;
+}

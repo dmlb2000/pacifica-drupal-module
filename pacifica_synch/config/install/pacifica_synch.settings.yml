@@ -1,4 +1,5 @@
 pacifica_synch:
+  enabled: false
   metadata:
     host: localhost
     port: 8121

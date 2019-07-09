@@ -1,0 +1,9 @@
+name: Pacifica Synchronization
+description: 'Pacifica module for synchronizing data between Pacifica Core services.'
+type: module
+package: Pacifica
+version: VERSION
+core: 8.x
+dependencies:
+- pacifica
+- drupal:system (>=8.5)

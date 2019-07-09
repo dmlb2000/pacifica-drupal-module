@@ -5,5 +5,6 @@ package: Pacifica
 version: VERSION
 core: 8.x
 dependencies:
+- pacifica
 - drupal:system (>=8.5)
 - filebrowser

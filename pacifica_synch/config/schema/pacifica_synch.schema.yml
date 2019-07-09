@@ -30,7 +30,7 @@ pacifica_synch.settings:
               type: string
               label: 'RabbitMQ DNS/Hostname'
             port:
-              type: string
+              type: integer
               label: 'RabbitMQ Port'
             user:
               type: string

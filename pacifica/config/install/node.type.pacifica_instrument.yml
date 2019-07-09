@@ -10,4 +10,4 @@ display_submitted: false
 dependencies:
   enforced:
     module:
-      - pacifica_uploader
+      - pacifica

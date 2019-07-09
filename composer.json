@@ -9,5 +9,7 @@
             "email": "dmlb2000@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php-amqplib/php-amqplib": "^2.9"
+    }
 }

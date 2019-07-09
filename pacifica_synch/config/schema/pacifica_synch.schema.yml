@@ -1,0 +1,43 @@
+pacifica_synch.settings:
+  type: config_object
+  label: 'Pacifica Synchronization Settings'
+  mapping:
+    pacifica_synch:
+      type: mapping
+      label: 'Pacifica Synchronization Settings Again'
+      mapping:
+        metadata:
+          type: mapping
+          label: 'Pacifica Metadata Endpoint Settings'
+          mapping:
+            host:
+              type: string
+              label: 'Pacifica Metadata DNS/Hostname'
+            port:
+              type: integer
+              label: 'Pacifica Metadata Port'
+            proto:
+              type: string
+              label: 'Pacifica Metadata Protocol'
+            path:
+              type: string
+              label: 'Pacifica Metadata Root Path'
+        amqp:
+          type: mapping
+          label: 'RabbitMQ Service Settings'
+          mapping:
+            host:
+              type: string
+              label: 'RabbitMQ DNS/Hostname'
+            port:
+              type: string
+              label: 'RabbitMQ Port'
+            user:
+              type: string
+              label: 'RabbitMQ User'
+            pass:
+              type: string
+              label: 'RabbitMQ Password'
+            vhost:
+              type: string
+              label: 'RabbitMQ VHost'

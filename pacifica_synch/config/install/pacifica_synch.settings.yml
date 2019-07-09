@@ -1,4 +1,9 @@
 pacifica_synch:
+  metadata:
+    host: localhost
+    port: 8121
+    proto: http
+    path: /
   amqp:
     host: localhost
     port: 5672

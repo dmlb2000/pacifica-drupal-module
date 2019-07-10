@@ -44,3 +44,29 @@ pacifica_synch.settings:
             vhost:
               type: string
               label: 'RabbitMQ VHost'
+        mappings:
+          type: sequence
+          label: 'List of Metadata Mappings'
+          sequence:
+            type: mapping
+            label: 'Single Metadata Mapping'
+            mapping:
+              object_type:
+                type: string
+                label: 'Metadata Object Name'
+              content_type:
+                type: string
+                label: 'Content Type to Save to'
+              fields:
+                type: sequence
+                label: 'List of Fields to Map'
+                sequence:
+                  type: mapping
+                  label: 'Single Field to Map'
+                  mapping:
+                    source_attr:
+                      type: string
+                      label: 'Source Object Attribute'
+                    dest_field:
+                      type: string
+                      label: 'Destination Field Name'

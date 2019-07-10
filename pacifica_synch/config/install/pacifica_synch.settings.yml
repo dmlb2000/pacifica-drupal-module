@@ -11,3 +11,4 @@ pacifica_synch:
     user: guest
     pass: guest
     vhost: /
+  mappings: []

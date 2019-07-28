@@ -98,13 +98,6 @@ class PacificaSynchConfigForm extends ConfigFormBase {
       '#submit' => array([$this, 'submitButtonCreateMapping']),
       '#weight' => 1,
     ];
-    $form['pacifica_synch']['content_mappings']['mappings'] = [
-      '#tree' => true,
-      '#type' => 'fieldset',
-      '#title' => 'Pacifica Metadata Content Mappings',
-      '#weight' => 30,
-      '#collapsed' => false,
-    ];
     $num_field_mappings = $form_state->get('num_field_mappings');
     if (empty($num_field_mappings)) {
       $num_field_mappings = array();
@@ -113,19 +106,25 @@ class PacificaSynchConfigForm extends ConfigFormBase {
     $meta_obj_list = $meta_obj->getObjectList();
     $all_content_types = NodeType::loadMultiple();
     $content_types_list = array();
+    $weight = 30;
     foreach ($all_content_types as $machine_name => $content_type) {
       $content_types_list[$machine_name] = $content_type->label();
     }
     foreach($num_field_mappings as $index => $num_fields) {
-      $obj_config = $config['mappings'][$index];
-      $form['pacifica_synch']['content_mappings']['mappings'][$index] = [
+      if (empty($config['mappings'][$index])) {
+        $obj_config = array('object_type' => '', 'content_type' => '', 'fields' => array());
+      } else {
+        $obj_config = $config['mappings'][$index];
+      }
+      $form['pacifica_synch']['content_mappings'][$index] = [
         '#tree' => true,
         '#type' => 'fieldset',
         '#title' => 'Pacifica Metadata Content Mapping',
-        '#weight' => 30,
+        '#weight' => $weight,
         '#collapsed' => false,
       ];
-      $form['pacifica_synch']['content_mappings']['mappings'][$index]['object_type'] = [
+      $weight+=1;
+      $form['pacifica_synch']['content_mappings'][$index]['object_type'] = [
         '#type' => 'select',
         '#title' => 'Metadata Object Type',
         '#required' => true,
@@ -133,7 +132,7 @@ class PacificaSynchConfigForm extends ConfigFormBase {
         '#default_value' => $obj_config['object_type'],
         '#options' => $meta_obj_list,
       ];
-      $form['pacifica_synch']['content_mappings']['mappings'][$index]['content_type'] = [
+      $form['pacifica_synch']['content_mappings'][$index]['content_type'] = [
         '#type' => 'select',
         '#title' => 'Content Type',
         '#required' => true,
@@ -141,6 +140,39 @@ class PacificaSynchConfigForm extends ConfigFormBase {
         '#default_value' => $obj_config['content_type'],
         '#options' => $content_types_list,
       ];
+      $form['pacifica_synch']['content_mappings'][$index]['fields'] = [
+        '#type' => 'table',
+        '#caption' => 'Field Mappings',
+        '#header' => array(
+          $this->t('Object Attribute'),
+          $this->t('Content Type Field'),
+        ),
+      ];
+      $meta_obj_attr_list = $meta_obj->getObjectAttrList($form_state->getValue(
+        array('pacifica_synch', 'content_mappings', $index, 'object_type')
+      ));
+      $ct_field_list = NodeType::load($form_state->getValue(
+        array('pacifica_synch', 'content_mappings', $index, 'content_type')
+      ));
+      \Drupal::logger('pacifica_synch')->error("Metadata Object Attr List ".var_export($meta_obj_attr_list, TRUE));
+      \Drupal::logger('pacifica_synch')->error("CT Field List ".var_export($ct_field_list, TRUE));
+      for($i = 1; $i <= $num_fields; $i++) {
+        $mapping_fields = $obj_config['fields'][$i];
+        $form['pacifica_synch']['content_mappings'][$index]['fields'][$i]['source_attr'] = [
+          '#type' => 'select',
+          '#title' => 'Object Attribute',
+          '#required' => true,
+          '#default_value' => $mapping_fields['source_attr'],
+          '#options' => $meta_obj_attr_list,
+        ];
+        $form['pacifica_synch']['content_mappings'][$index]['fields'][$i]['dest_field'] = [
+          '#type' => 'select',
+          '#title' => 'Object Attribute',
+          '#required' => true,
+          '#default_value' => $mapping_fields['dest_field'],
+          '#options' => $ct_field_list,
+        ];
+      }
     }
     $form['pacifica_synch']['metadata']['host'] = [
       '#type' => 'textfield',

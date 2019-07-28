@@ -49,4 +49,14 @@ class PacificaMetadataAPI {
     \Drupal::logger('pacifica_synch')->error("Obj List @array", array('@array' => var_export($body, true)));
     return json_decode($body, TRUE)['available_objects'];
   }
+
+  public function getObjectAttrList($obj_cls) {
+    $client = new Client(array(
+      'base_uri' => $this->getUrl(),
+    ));
+    $response = $client->get("/objectinfo/$obj_cls");
+    $body = $response->getBody()->getContents();
+    \Drupal::logger('pacifica_synch')->error("Obj List @array", array('@array' => var_export($body, true)));
+    return json_decode($body, TRUE)['field_list'];
+  }
 };

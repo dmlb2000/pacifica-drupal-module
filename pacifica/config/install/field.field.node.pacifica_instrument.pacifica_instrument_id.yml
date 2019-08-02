@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.pacifica_instrument_id
+    - node.type.pacifica_instrument
+id: node.pacifica_instrument.pacifica_instrument_id
+field_name: pacifica_instrument_id
+entity_type: node
+bundle: pacifica_instrument
+label: 'Pacifica Instrument ID'
+description: 'Pacifica Instrument ID as represented in the Pacifica Metadata DB'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,30 @@
+pacifica_migrate.settings:
+  type: config_object
+  label: 'Pacifica Migrate Settings'
+  mapping:
+    pacifica_migrate:
+      type: mapping
+      label: 'Pacifica Migrate Settings Again'
+      mapping:
+        database_settings:
+          type: mapping
+          label: 'Pacifica Metadata Service Database Connection Info'
+          mapping:
+            driver:
+              type: string
+              label: 'Drupal Database Driver Name'
+            port:
+              type: integer
+              label: 'Database Port'
+            host:
+              type: string
+              label: 'Database Host'
+            username:
+              type: string
+              label: 'Database Username'
+            password:
+              type: string
+              label: 'Database Users Password'
+            database:
+              type: string
+              label: 'Database Name'

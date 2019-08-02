@@ -1,0 +1,15 @@
+id: metadata_drupal_instruments
+label: Migrate from Pacifica Metadata to Drupal the Instruments
+migration_tags:
+  - Pacifica
+  - Metadata to Drupal
+  - Instruments
+source:
+  plugin: metadata_instruments
+process:
+  pacifica_project_id: id
+  title: display_name
+  body: name
+destination:
+  plugin: entity:node
+  default_bundle: pacifica_instrument

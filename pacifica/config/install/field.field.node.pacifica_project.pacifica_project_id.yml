@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.pacifica_project_id
+    - node.type.pacifica_project
+id: node.pacifica_project.pacifica_project_id
+field_name: pacifica_project_id
+entity_type: node
+bundle: pacifica_project
+label: 'Pacifica Project ID'
+description: 'Pacifica Project ID as represented in the Pacifica Metadata Service'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

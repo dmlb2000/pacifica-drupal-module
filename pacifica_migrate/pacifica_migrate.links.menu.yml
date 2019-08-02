@@ -1,0 +1,5 @@
+pacifica_migrate.admin_settings:
+  title: 'Migrate Settings'
+  description: 'Settings for Migrating Data from Pacifica Metadata to/from Drupal'
+  parent: pacifica.admin_settings
+  route_name: pacifica_migrate.settings

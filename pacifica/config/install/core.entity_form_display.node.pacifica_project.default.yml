@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.pacifica_project.body
+    - field.field.node.pacifica_project.pacifica_project_id
     - node.type.pacifica_project
   module:
     - path
@@ -22,6 +23,14 @@ content:
     third_party_settings: {}
     type: text_textarea_with_summary
     region: content
+  pacifica_project_id:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 3

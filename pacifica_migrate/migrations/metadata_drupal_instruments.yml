@@ -7,7 +7,7 @@ migration_tags:
 source:
   plugin: metadata_instruments
 process:
-  pacifica_project_id: id
+  pacifica_instrument_id: id
   title: display_name
   body: name
 destination:

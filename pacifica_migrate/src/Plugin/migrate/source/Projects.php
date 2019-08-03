@@ -2,6 +2,8 @@
 
 namespace Drupal\pacifica_migrate\Plugin\migrate\source;
 
+use Drupal\migrate\Row;
+
 /**
  * Projects Source from Pacifica Metadata Model
  * 

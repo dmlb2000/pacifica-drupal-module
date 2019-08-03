@@ -7,6 +7,13 @@ migration_tags:
 source:
   plugin: metadata_projects
 process:
+  id:
+  - plugin: machine_name
+    source: id
+  - plugin: make_unique_entity_field
+    entity_type: filter_format
+    field: id
+    postfix: projects
   pacifica_project_id: id
   title: title
   body: abstract

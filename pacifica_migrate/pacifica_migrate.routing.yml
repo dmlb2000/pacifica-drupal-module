@@ -1,6 +1,0 @@
-pacifica_migrate.settings:
-  path: '/admin/config/system/pacifica_migrate'
-  defaults:
-    _form: '\Drupal\pacifica_migrate\Form\PacificaMigrateConfigForm'
-  requirements:
-    _permission: 'administer site configuration'

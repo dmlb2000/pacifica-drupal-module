@@ -1,0 +1,35 @@
+id: project_pac_to_drupal
+label: 'Migrate Pacifica Project to Drupal'
+migration_group: pac_to_drupal
+source:
+  plugin: pacifica_table
+  key: pacifica
+  pacifica_table: projects
+  pacifica_alias: pid
+  pacifica_fields:
+    - id
+    - title
+    - abstract
+    - short_name
+    - science_theme
+    - updated
+    - created
+    - accepted_date
+    - submitted_date
+  pacifica_ids:
+    id:
+      type: string
+      alias: pid
+process:
+  title: title
+  pac_project_id: id
+  pac_project_abstract: abstract
+  pac_project_accepted_date: accepted_date
+  pac_project_created_date: created_date
+  pac_project_science_theme: science_theme
+  pac_project_short_name: short_name
+  pac_project_submitted_date: submitted_date
+  pac_project_updated_date: updated_date
+destination:
+  plugin: 'entity:node'
+  default_bundle: pacifica_project

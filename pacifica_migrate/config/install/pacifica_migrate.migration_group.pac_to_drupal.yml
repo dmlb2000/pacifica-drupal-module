@@ -1,0 +1,7 @@
+id: pac_to_drupal
+label: Pacifica to Drupal Content
+description: Migrate Pacifica metadata model to Drupal content types.
+dependencies:
+  enforced:
+    module:
+      - pacifica_migrate

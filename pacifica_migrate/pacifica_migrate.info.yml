@@ -1,10 +1,12 @@
-name: Pacifica Migrate
-description: 'Pacifica migrations module.'
 type: module
-package: Pacifica
-version: VERSION
-core: 8.x
+name: Pacifica Migrations
+description: 'Pacifica Migrations Module'
+# core: 8.x
 dependencies:
-- drupal:system (>=8.5)
-- migrate
-- migrate_plus
+  - pacifica:pacifica
+  - drupal:migrate
+  - drupal:migrate_plus
+
+# Information added by Drupal.org packaging script on 2019-04-19
+version: '8.x-0.1'
+core: '8.x'

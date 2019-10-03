@@ -1,8 +1,0 @@
-pacifica_migrate:
-  database_settings:
-    host: localhost
-    port: 5432
-    driver: pgsql
-    password: pacifica
-    username: pacifica
-    database: pacifica_metadata
